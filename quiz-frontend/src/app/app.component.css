@@ -1,0 +1,97 @@
+/* Style principal du header */
+.app-header {
+  background-color: #0b3d25; /* Couleur verte */
+  color: white;
+  height: 160px; /* Augmente la hauteur */
+  display: flex;
+  justify-content: center; /* Centre horizontalement le contenu */
+  align-items: center; /* Centre verticalement le contenu */
+  position: relative;
+  border-bottom-left-radius: 100px; /* Arrondi à gauche */
+  padding: 0 20px;
+}
+
+/* Contenu du header */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Bouton de retour à l'accueil */
+.back-home-container {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.back-home-button {
+  background: #ffd500; /* Jaune */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-left: 50px;
+}
+
+.back-home-button:hover {
+  background: #e0c200; /* Jaune foncé au survol */
+}
+
+/* Bouton de déconnexion */
+.logout-container {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logout-button {
+  background: #d9534f; /* Rouge */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-right: 130px;
+}
+
+.logout-button:hover {
+  background: #c9302c; /* Rouge foncé au survol */
+}
+
+/* Titre principal */
+.header-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+/* Conteneur du logo */
+.header-logo-container {
+  position: absolute;
+  right: -40px;
+  bottom: -50px;
+  border-radius: 50%;
+  background-color: #5d8978;
+  padding: 15px;
+}
+
+/* Style du logo */
+.header-logo {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -1,0 +1,141 @@
+/* Arrière-plan de la page */
+.page-container {
+  background-color: #d4f3e3; /* Vert clair */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* Conteneur principal */
+.container {
+  position: relative;
+  width: 700px; /* Taille augmentée */
+  height: 700px; /* Taille augmentée */
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Animation circulaire */
+.container span {
+  position: absolute;
+  left: 0;
+  width: 40px; /* Taille augmentée */
+  height: 8px; /* Taille augmentée */
+  background: #2c4f2c; /* Couleur verte foncée */
+  border-radius: 80px;
+  transform-origin: 350px; /* Ajuste l'origine de la rotation */
+  transform: rotate(calc(var(--i) * (360deg / 50)));
+  animation: blink 3s linear infinite;
+  animation-delay: calc(var(--i) * (3s / 50));
+}
+
+@keyframes blink {
+  0% {
+    background: #13bd65; /* Couleur verte fluo */
+  }
+  25% {
+    background: #2c4f2c; /* Couleur verte foncée */
+  }
+}
+
+/* Boîte d'inscription */
+.register-box {
+  position: absolute;
+  width: 90%; /* Largeur augmentée */
+  max-width: 500px; /* Largeur maximale augmentée */
+  z-index: 1;
+  padding: 40px; /* Plus d'espace interne */
+  border-radius: 50%; /* Courbure augmentée */
+  background: #0b3d25; /* Couleur de fond sombre */
+}
+
+/* Style du formulaire */
+form {
+  width: 100%;
+  padding: 0 30px; /* Espacement interne augmenté */
+}
+
+/* Titre */
+h2 {
+  font-size: 2.8em; /* Taille du texte augmentée */
+  color: #d4f3e3; /* Couleur verte fluo */
+  text-align: center;
+  margin-bottom: 30px; /* Plus d'espace sous le titre */
+}
+
+/* Champ de saisie */
+.input-box {
+  position: relative;
+  margin: 30px 0; /* Plus d'espace entre les champs */
+}
+
+input {
+  width: 80%;
+  height: 60px; /* Taille augmentée */
+  background: transparent;
+  border: 3px solid #2c4f2c; /* Bordure verte plus épaisse */
+  outline: none;
+  border-radius: 50px; /* Bordure plus courbée */
+  font-size: 1.4em; /* Taille du texte augmentée */
+  color: #fff;
+  padding: 0 20px;
+  transition: 0.5s ease;
+}
+
+input:focus {
+  border-color: #d4f3e3; /* Couleur verte fluo lors du focus */
+}
+
+input[value]:not([value=""]) ~ label,
+input:focus ~ label {
+  top: -14px; /* Ajustement du déplacement du label */
+  font-size: 1em; /* Taille ajustée du label */
+  background: #1f293a;
+  padding: 0 8px;
+  color: #d4f3e3; /* Couleur verte fluo */
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 1.2em; /* Taille du texte augmentée */
+  pointer-events: none;
+  transition: 0.5s ease;
+  color: #fff;
+}
+
+/* Bouton d'inscription */
+.btn {
+  width: 88%;
+  height: 60px; /* Taille augmentée */
+  background: #d4f3e3; /* Couleur verte fluo */
+  border: none;
+  outline: none;
+  border-radius: 50px; /* Bordure plus courbée */
+  cursor: pointer;
+  font-size: 1.4em; /* Taille du texte augmentée */
+  color: #1f293a;
+  font-weight: 700; /* Texte plus gras */
+}
+
+/* Lien vers connexion */
+.signin-link {
+  margin: 20px 0;
+  text-align: center;
+  color: red;
+}
+
+.signin-link a {
+  font-size: 1.2em; /* Taille augmentée */
+  color: #d4f3e3; /* Couleur verte fluo */
+  text-decoration: none;
+  font-weight: 700; /* Texte plus gras */
+}

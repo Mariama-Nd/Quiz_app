@@ -1,0 +1,165 @@
+/* Page principale */
+.home-page {
+  background: radial-gradient(circle at center, #d4f3e3, #0b3d25);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  position: relative;
+}
+
+/* Quiz logo container */
+.quiz-logo-container {
+  animation: fadeIn 1.5s ease-in-out;
+  width: 100%; /* S'assure que le conteneur occupe toute la largeur */
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  margin-bottom: 30px; /* Ajoute de l'espace en bas */
+}
+
+/* Quiz logo */
+.quiz-logo {
+  background: #0b3d25;
+  border-radius: 50%;
+  width: 300px; /* Augmente la taille */
+  height: 300px; /* Augmente la taille */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px dashed #ffd500;
+  position: relative;
+  text-align: center; /* Centre le texte horizontalement */
+}
+
+/* Texte du logo */
+.quiz-logo h1 {
+  font-size: 2.5em; /* Augmente la taille du texte */
+  font-weight: bold;
+  margin: 0;
+  color: #ffd500;
+  text-align: center; /* Centre le texte dans le conteneur */
+  line-height: 1.4; /* Ajuste l'espacement vertical du texte */
+}
+
+/* Question marks */
+.question-marks {
+  position: absolute;
+  top: -20px;
+  display: flex;
+  gap: 10px;
+}
+
+.question-marks span {
+  font-size: 1.5em;
+  color: #ffd500;
+}
+
+
+/* Question de quiz */
+.quiz-question {
+  margin-top: 30px;
+  text-align: center;
+  animation: slideUp 1s ease-in-out;
+}
+
+.quiz-question h2 {
+  font-size: 1.8em;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+
+/* Options de quiz */
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+  gap: 30px; /* Espace entre les cartes */
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.quiz-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #1f1f2e;
+  color: white;
+  border: 3px solid #ffd500;
+  font-size: 1.4em; /* Texte plus grand */
+  padding: 20px; /* Plus d'espace interne */
+  height: 120px; /* Hauteur augmentée */
+  width: 180px; /* Largeur augmentée */
+  border-radius: 15px; /* Coins arrondis */
+  cursor: pointer; /* Curseur de lien */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de carte */
+}
+
+.quiz-option:hover {
+  background: #ffd500;
+  color: black;
+  transform: translateY(-5px); /* Légère élévation au survol */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus marquée au survol */
+}
+
+.quiz-option:active {
+  transform: translateY(0); /* Repose la carte à son état initial */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Conteneur du bouton de déconnexion */
+.logout-container {
+  position: absolute;
+  top: 20px; /* Distance du haut */
+  right: 20px; /* Distance de la droite */
+}
+
+/* Bouton de déconnexion */
+.logout-button {
+  background: #d9534f; /* Rouge */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background: #c9302c; /* Rouge plus sombre au survol */
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

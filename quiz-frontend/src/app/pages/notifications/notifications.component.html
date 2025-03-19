@@ -1,0 +1,8 @@
+<div class="notification-page">
+  <h2>🔔 Notifications Récentes</h2>
+  <ul class="notification-list">
+    <li *ngFor="let notification of notifications">
+      {{ notification.message }} - <span>{{ notification.created_at | date:'short' }}</span>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,132 @@
+body {
+  margin: 0; /* Supprimer les marges par défaut */
+  font-family: 'Arial', sans-serif; /* Police générale */
+  background: #d4f3e3; /* Couleur de fond de la page */
+  height: 85vh; /* Hauteur de la page pour couvrir tout l'écran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-participated-quizzes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 950px; /* Largeur maximale */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour l'effet 3D */
+  background: #ffffff; /* Fond blanc pour la section principale */
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #0b3d25; /* Couleur du texte pour le titre */
+  font-size: 2em; /* Taille de police plus grande */
+  text-align: center; /* Centrer le titre */
+  text-transform: uppercase; /* Mettre en majuscules */
+  letter-spacing: 1px; /* Espacement entre les lettres */
+}
+
+.quiz-cards {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante */
+  justify-content: center; /* Centre les cartes dans le conteneur */
+  gap: 20px; /* Espace entre les cartes */
+}
+
+.quiz-card {
+  flex: 1 1 calc(20% - 20px); /* Toujours 5 cartes par rangée */
+  max-width: 400px; /* Largeur maximale des cartes augmentée */
+  height: 250px; /* Hauteur des cartes réduite */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+  border-radius: 15px; /* Coins arrondis */
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Dégradé pour le fond */
+  transition: transform 0.3s; /* Transition pour l'animation */
+}
+
+@media (max-width: 768px) {
+  .quiz-card {
+    flex: 1 1 calc(45% - 20px); /* 2 cartes par rangée sur les écrans plus petits */
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-card {
+    flex: 1 1 100%; /* 1 carte par rangée sur les petits écrans */
+  }
+}
+
+.quiz-card:hover {
+  transform: translateY(-5px); /* Léger mouvement vers le haut au survol */
+}
+
+.quiz-card img {
+  width: 100%;
+  height: 150px; /* Hauteur ajustée pour une meilleure proportion d'image */
+  object-fit: cover;
+}
+
+.quiz-title {
+  font-size: 1.4em; /* Taille de police du titre ajustée */
+  margin: 10px 0;
+  color: #0b3d25; /* Couleur du texte pour le titre du quiz */
+  font-weight: bold; /* Mettre en gras */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* Ombre pour le texte */
+}
+
+button {
+  background-color: #0b3d25; /* Couleur de fond des boutons */
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Plus de padding pour un bouton plus large */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em; /* Taille de police ajustée */
+  transition: background 0.3s, transform 0.2s; /* Transition pour le bouton */
+
+}
+
+button:hover {
+  background-color: #097a4b; /* Couleur au survol */
+  transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #0b3d25;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.search-bar {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

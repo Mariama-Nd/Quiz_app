@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Non Participés</title>
+</head>
+<body>
+  <div class="not-participated-quizzes">
+    <h1>Quiz non participés</h1>
+
+    <!-- Champ de recherche -->
+    <input type="text" placeholder="Rechercher un quiz..." (input)="filterQuizzes($event)" class="search-bar" />
+
+    <div *ngIf="notParticipatedQuizzes.length === 0">
+      <p>Tous les quiz ont été complétés !</p>
+    </div>
+
+    <div class="quiz-cards">
+      <div *ngFor="let quiz of filteredQuizzes" class="quiz-card">
+        <img src="list_quiz2.jpeg" alt="Image du quiz" />
+        <div class="quiz-title">{{ quiz.titre }}</div>
+        <button (click)="participate(quiz.id)">Participer</button>
+      </div>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1"> < Précédent</button>
+      <span>Page {{ currentPage }} sur {{ totalPages }}</span>
+      <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Suivant ></button>
+    </div>
+  </div>
+
+</body>
+</html>

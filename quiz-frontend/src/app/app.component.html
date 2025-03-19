@@ -1,0 +1,21 @@
+<body>
+  <header class="app-header">
+    <!-- Bouton de retour à l'accueil -->
+    <div class="back-home-container">
+      <button (click)="goToHome()" class="back-home-button">🏠 Accueil</button>
+    </div>
+
+    <div class="header-content">
+      <h1 class="header-title">Quiz Collaboratif</h1>
+      <div class="header-logo-container">
+        <img src="logo.png" alt="Quiz Logo" class="header-logo" />
+      </div>
+    </div>
+
+    <!-- Bouton de déconnexion -->
+    <div class="logout-container">
+      <button (click)="logout()" class="logout-button">🔴 Déconnexion</button>
+    </div>
+  </header>
+</body>
+<router-outlet></router-outlet>

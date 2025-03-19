@@ -1,0 +1,39 @@
+<body>
+  <div class="container">
+    <button class="back-btn" (click)="goback()">Retour aux Statistiques</button>
+    <h2>📜 Détails de vos Participations aux Quizs</h2>
+
+    <!-- Barre de recherche -->
+    <input type="text" placeholder="Rechercher un quiz ou une question..." [(ngModel)]="searchTerm" (input)="filterResults()" class="search-bar">
+
+    <div *ngFor="let quiz of filteredQuizzes" class="quiz-box">
+      <h3>
+        📖 {{ quiz.quizTitle }}
+        <button class="comment-btn" (click)="openCommentPopup(quiz.quizTitle)">💬 Commenter</button>
+      </h3>
+
+      <div class="questions-list">
+        <div *ngFor="let question of quiz.questions" class="question-card">
+          <p class="question-text">❓ <span [class.highlight]="matchesSearch(question.questionText)">{{ question.questionText }}</span></p>
+          <p>
+            <span class="label">Votre réponse :</span>
+            <span [class.correct]="question.isCorrect" [class.wrong]="!question.isCorrect">
+              {{ question.userAnswer }}
+            </span>
+          </p>
+          <p class="correct-answer">✅ Réponse correcte : {{ question.correctAnswer }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🚀 Popup pour saisir le commentaire -->
+    <div class="popup-overlay" *ngIf="showCommentPopup">
+      <div class="popup">
+        <h3>📝 Ajouter un Commentaire sur "{{ selectedQuizTitle }}"</h3>
+        <textarea [(ngModel)]="commentText" placeholder="Écrivez votre commentaire ici..."></textarea>
+        <button class="send-btn" (click)="submitComment()">Envoyer</button>
+        <button class="close-btn" (click)="closeCommentPopup()">Fermer</button>
+      </div>
+    </div>
+  </div>
+</body>

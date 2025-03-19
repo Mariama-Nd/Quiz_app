@@ -1,0 +1,31 @@
+<div class="quiz-container">
+  <h1 class="quiz-title">{{ quizTitle }}</h1>
+
+  <div class="question-container" *ngIf="currentQuestion">
+      <div class="question-circle">
+          <span class="question-icon">?</span>
+      </div>
+
+      <div class="question">
+          <h2>{{ currentQuestion.question }}</h2>
+      </div>
+
+      <div class="answers">
+          <div *ngFor="let answer of currentQuestion.answers; let i = index" class="answer-option">
+              <input type="checkbox" [(ngModel)]="answer.selected" />
+              <span [ngClass]="feedback[i]">{{ answer.text }}</span>
+          </div>
+      </div>
+
+      <div class="button-container">
+          <button class="quiz-btn submit-btn" (click)="submitAnswers()">✅ Soumettre</button>
+          <button class="quiz-btn next-btn" (click)="nextQuestion()">➡️ Suivant</button>
+      </div>
+  </div>
+
+  <!-- Message de fin du quiz -->
+  <div class="quiz-end-message" *ngIf="quizCompleted">
+      <h2>🎉 Vous êtes à la fin du quiz : "{{ quizTitle }}" 🎉</h2>
+      <p>Merci d'avoir participé !</p>
+  </div>
+</div>

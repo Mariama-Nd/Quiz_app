@@ -1,0 +1,71 @@
+.search-bar {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  body {
+    background-color: #d4f3e3;
+    font-family: 'Arial', sans-serif;
+    height: auto;
+    min-height: 120vh;
+  }
+
+  .container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .quiz-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  h3 {
+    color: rgb(245, 195, 29);
+  }
+
+  /* Liste des commentaires */
+  .comments-list {
+    margin-top: 10px;
+  }
+
+  .comment-card {
+    background-color: rgba(197, 197, 202, 0.4);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+
+  .comment-text {
+    font-style: italic;
+  }
+
+  .comment-date {
+    color: #666;
+    font-size: 12px;
+  }
+
+  .back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #15633d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .back-btn:hover {
+    background-color: #0b3d25;
+  }

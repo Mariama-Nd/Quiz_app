@@ -1,0 +1,61 @@
+<body>
+  <div class="container">
+    <h2>📊 Statistiques & Classement de {{currentUsername}}</h2>
+
+    <div class="content">
+      <!-- Section des statistiques -->
+      <div class="stats-box">
+        <h3>📈 Vos Statistiques</h3>
+
+        <div *ngIf="statistiques">
+          <!-- Cartes des statistiques -->
+          <div class="stats-container">
+            <div class="stat-card">
+              <span class="icon">📚</span>
+              <p>Quiz Participés</p>
+              <h3>{{ statistiques.totalQuizzes }}</h3>
+            </div>
+
+            <div class="stat-card">
+              <span class="icon">📝</span>
+              <p>Questions Répondues</p>
+              <h3>{{ statistiques.totalQuestions }}</h3>
+            </div>
+          </div>
+
+          <!-- Choix du type de graphique -->
+          <label for="graphType">Type de graphique :</label>
+          <select id="graphType" (change)="changeGraphType($event)">
+            <option value="">Choisir</option>
+            <option value="doughnut">Anneau</option>
+            <option value="bar">Barres</option>
+            <option value="line">Ligne</option>
+          </select>
+
+          <!-- Graphique des réponses -->
+          <canvas id="quizChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Section du classement -->
+      <div class="rank-box">
+        <h3>🏆 Classement des Utilisateurs</h3>
+        <table>
+          <tr>
+            <th>Position</th>
+            <th>Utilisateur</th>
+            <th>Score</th>
+          </tr>
+          <tr *ngFor="let user of classement; let i = index" [class.highlight]="user.username === currentUsername">
+            <td>{{ i + 1 }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.score }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bouton Voir Détails -->
+    <button class="details-btn" (click)="voirDetails()">Voir Détails</button>
+  </div>
+</body>

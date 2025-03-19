@@ -1,0 +1,81 @@
+<div class="create-quiz-page">
+  <div *ngIf="showCreateQuiz" class="create-quiz-container">
+
+    <!-- Partie gauche : Formulaire du quiz -->
+    <div class="quiz-form">
+      <h2>📝 Créer un Nouveau Quiz</h2>
+      <form #quizForm="ngForm">
+        <div class="form-group">
+          <label for="title">Titre du Quiz :</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            [(ngModel)]="quiz.title"
+            required
+            placeholder="Entrez le titre du quiz"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description :</label>
+          <textarea
+            id="description"
+            name="description"
+            [(ngModel)]="quiz.description"
+            rows="3"
+            placeholder="Ajoutez une brève description"
+          ></textarea>
+        </div>
+      </form>
+    </div>
+
+    <!-- Barre de séparation -->
+    <div class="divider"></div>
+
+    <!-- Partie droite : Ajout de questions -->
+    <div class="quiz-questions">
+      <h2>📌 Ajouter des Questions</h2>
+      <div *ngFor="let question of questions; let i = index" class="question-group">
+        <input
+          type="text"
+          [(ngModel)]="questions[i].text"
+          placeholder="Entrez une question"
+        />
+      </div>
+
+      <!-- Bouton flottant pour ajouter une question -->
+      <button class="floating-btn" (click)="addQuestion()">+</button>
+    </div>
+  </div>
+
+  <!-- Bouton pour créer le quiz -->
+  <button *ngIf="showCreateQuiz" class="create-quiz-btn" (click)="createQuiz()">🚀 Créer</button>
+
+  <!-- Section d'ajout des réponses -->
+  <div *ngIf="showAddResponses" class="add-responses-container">
+    <h2>✅ Ajouter des Réponses</h2>
+    <div class="form-group">
+      <label for="questions">Sélectionnez une Question :</label>
+      <select id="questions" [(ngModel)]="selectedQuestionId">
+        <option *ngFor="let question of questionList" [value]="question.id">
+          {{ question.question_text }}
+        </option>
+      </select>
+    </div>
+
+    <div *ngFor="let response of responses; let i = index" class="response-group">
+      <input
+        type="text"
+        [(ngModel)]="responses[i].text"
+        placeholder="Entrez une réponse"
+      />
+      <input type="checkbox" [(ngModel)]="responses[i].isCorrect" />
+    </div>
+
+    <!-- Bouton flottant pour ajouter une réponse -->
+    <button class="floating-btn" (click)="addResponseField()">+</button>
+
+    <!-- Bouton pour enregistrer les réponses -->
+    <button class="save-responses-btn" (click)="saveResponses()">💾 Enregistrer</button>
+  </div>
+</div>

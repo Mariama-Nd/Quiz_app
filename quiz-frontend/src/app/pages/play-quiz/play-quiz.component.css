@@ -1,0 +1,171 @@
+/* Conteneur principal du quiz */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #d4f3e3, #0b3d25);
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  min-height: 78vh;
+}
+
+/* Titre du quiz */
+.quiz-title {
+  font-size: 2.8em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #0b3d25;
+  text-align: center;
+}
+
+/* Conteneur de la question */
+.question-container {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  text-align: center;
+  position: relative;
+  overflow: visible; /* Permet au cercle de dépasser */
+}
+
+/* Cercle contenant le point d’interrogation */
+.question-circle {
+  position: absolute;
+  top: -40px; /* Permet de chevaucher la bordure */
+  left: 50%;
+  transform: translateX(-50%); /* Centrage horizontal */
+  width: 80px;
+  height: 80px;
+  background: #ffcc00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid black; /* Pour un contour noir */
+}
+
+/* Point d’interrogation avec animation */
+.question-icon {
+  font-size: 2.5em;
+  color: black;
+  font-weight: bold;
+  animation: bounce 1.5s infinite; /* Animation rebond */
+}
+
+/* Animation du point d’interrogation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Position normale */
+  }
+  50% {
+    transform: translateY(-8px); /* Déplacement vers le haut */
+  }
+}
+
+/* Question */
+.question h2 {
+  font-size: 1.6em;
+  color: black;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Réponses */
+.answers {
+  margin: 15px 0;
+}
+
+/* Style des réponses */
+.answer-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.answer-option:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs */
+.answer-option input {
+  margin-right: 10px;
+}
+
+/* Bonnes et mauvaises réponses */
+.correct {
+  color: #1f7a1f;
+  font-weight: bold;
+}
+
+.incorrect {
+  color: #c9302c;
+  font-weight: bold;
+}
+
+/* Conteneur des boutons */
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+/* Boutons */
+.quiz-btn {
+  padding: 12px 20px;
+  border: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn {
+  background: #28a745;
+  color: white;
+}
+
+.submit-btn:hover {
+  background: #218838;
+}
+
+.next-btn {
+  background: #ffcc00;
+  color: white;
+}
+
+.next-btn:hover {
+  background: #deb202;
+}
+
+.quiz-end-message {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-end-message h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.quiz-end-message p {
+  font-size: 1.2em;
+}
+
